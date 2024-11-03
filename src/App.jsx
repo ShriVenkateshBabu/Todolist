@@ -12,6 +12,10 @@ const App = () => {
       id:1,
       item:"coding",
       checked: true,
+    }, {
+      id:1,
+      item:"coding",
+      checked: true,
     }
   ])
   
