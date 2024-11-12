@@ -1,10 +1,11 @@
 import React from 'react'
-import { TbBackground } from 'react-icons/tb'
 
-const Header = () => {
+const Header = ({title}) => {
   return (
-    <div style={{backgroundColor:"mediumblue",color:"white"}}>Header</div>
+    <div style={{backgroundColor:"mediumblue",color:"white"}}>{title}</div>
   )
 }
-
+// Header.defaultProps ={
+//   title:"to do list"
+// }
 export default Header
