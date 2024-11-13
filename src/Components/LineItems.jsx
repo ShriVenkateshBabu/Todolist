@@ -12,7 +12,7 @@ const LineItems = ({itm,handleCheck,handleclick}) => {
         onDoubleClick={() => handleCheck(itm.id)}
         >{itm.item}</label>
          <FaTrash 
-         onClick={()=> handleclick(itm.id )}
+         onClick={()=> handleclick(itm.id)}
          role='button'
          /> 
           </li>
