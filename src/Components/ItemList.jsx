@@ -5,7 +5,7 @@ import LineItems from './LineItems';
 const ItemList = ({items,handleCheck,handleclick}) => {
     return (
     
-    <ul>
+    <ul > 
     {items.map((itm)=>{
     //  let labelstyle ={}
     //  if(itm.checked){
@@ -14,9 +14,9 @@ const ItemList = ({items,handleCheck,handleclick}) => {
       return (
       <LineItems
       itm ={itm}
-      key={itm.id}
       handleCheck={handleCheck}
       handleclick={handleclick}
+      key={itm.id}
       />
       )
 })}
