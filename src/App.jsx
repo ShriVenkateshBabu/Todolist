@@ -3,16 +3,20 @@ import Footer from "./Components/Footer"
 import Header from "./Components/Header"
 import React, { useEffect, useState } from 'react'
 import AddItem from './Components/AddItem';
+import Searchitem from './Components/Searchitem';
 
 const App = () => {
-  let [items, setitmes] = useState(JSON.parse(localStorage.getItem("to-do-list")))
+  let [items, setitmes] = useState(JSON.parse(localStorage.getItem("to-do-list"))|| []);
   let[newItem, setnewItem] =useState("")
-  
+  let [searchitm, setSearchitm] = useState('')
+ 
+
    function additem(item){
     let id = items.length ? items[items.length-1].id +1:1;
     let new_item = {id,item,checked:false};
-    setitmes([...items,new_item]);
-    localStorage.setItem("to-do-list", JSON.stringify(items))
+    let updateitem = [...items,new_item]
+    setitmes(updateitem);
+    localStorage.setItem("to-do-list", JSON.stringify(updateitem))
    }
   function handlesubmit(e){
     e.preventDefault()
@@ -51,9 +55,12 @@ const App = () => {
       setitem = {setnewItem}
       handlesubmit ={handlesubmit}
       />
-    
+      <Searchitem
+       searchitm ={searchitm}
+       setsearchitm = {setSearchitm}
+      />
       <Content 
-      items = {items}
+      items = {items.filter((items)=>(items.item).toLowerCase().includes(searchitm.toLowerCase()))}
       handleCheck ={handleCheck}
       handleclick ={handleclick}
       />
