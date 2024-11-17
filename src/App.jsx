@@ -6,10 +6,13 @@ import AddItem from './Components/AddItem';
 import Searchitem from './Components/Searchitem';
 
 const App = () => {
-  let [items, setitmes] = useState(JSON.parse(localStorage.getItem("to-do-list"))|| []);
+  let [items, setitmes] = useState([]);
   let[newItem, setnewItem] =useState("")
   let [searchitm, setSearchitm] = useState('')
- 
+  
+  useEffect(()=>{
+    setitmes(JSON.parse(localStorage.getItem("to-do-list")))  
+  },[])
 
    function additem(item){
     let id = items.length ? items[items.length-1].id +1:1;

@@ -1,10 +1,13 @@
 import React from 'react'
 import { FaPlus } from "react-icons/fa";
+import { useRef } from 'react';
 const AddItem = ({newItem,setitem,handlesubmit}) => {
+  const input_ref = useRef()
   return (
     <form className='addForm' onSubmit={handlesubmit}>
         <label htmlFor='additem'>ADD ITEMS</label>
         <input type='text'
+        ref={input_ref}
         id='additem'
         placeholder='add item'
         autoFocus
@@ -16,6 +19,7 @@ const AddItem = ({newItem,setitem,handlesubmit}) => {
         
         <button
         type='submit'
+        onClick={()=> input_ref.current.focus()}
         >
         <FaPlus/>
         </button>
