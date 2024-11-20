@@ -6,12 +6,26 @@ import AddItem from './Components/AddItem';
 import Searchitem from './Components/Searchitem';
 
 const App = () => {
+   const APL_URL = "http://localhost:3400/items"
   let [items, setitmes] = useState([]);
   let[newItem, setnewItem] =useState("")
   let [searchitm, setSearchitm] = useState('')
   
   useEffect(()=>{
-    setitmes(JSON.parse(localStorage.getItem("to-do-list")))  
+      const fetch_items = async() => {
+       try{
+         const response = await fetch(APL_URL);
+         console.log(response);
+         const listitm = await response.json();
+         console.log(listitm);
+         setitmes(listitm)
+         
+       }
+       catch(err){
+        console.log(err.stack)
+       }
+      }
+      (async ()=>await fetch_items())()
   },[])
 
    function additem(item){

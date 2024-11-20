@@ -1,0 +1,14 @@
+{
+    "items" :[
+        {
+            "id":1,
+            "checked":true,
+            "item":"hello world"
+        },
+        {
+            "id":2,
+            "checked":false,
+            "item":"hell world"
+        }
+    ]
+}
