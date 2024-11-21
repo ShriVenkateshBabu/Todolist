@@ -11,6 +11,7 @@ const App = () => {
   let[newItem, setnewItem] =useState("")
   let [searchitm, setSearchitm] = useState('')
   let[fetchError,setFetchError] = useState(null)
+  let[loading ,setloading] = useState(true)
   
   useEffect(()=>{
       const fetch_items = async() => {
@@ -27,8 +28,14 @@ const App = () => {
        catch(err){
         setFetchError(err.message)
        }
+       finally{
+          setloading(false)
+       }
       }
-      (async ()=>await fetch_items())()
+      setTimeout(()=>{
+        (async ()=>await fetch_items())()
+      },3000)
+      
   },[])
 
    function additem(item){
@@ -80,12 +87,14 @@ const App = () => {
        setsearchitm = {setSearchitm}
       />
      <main>    
+      {loading && <p>loading items</p>}
       {fetchError && <p>Error :{fetchError}</p>}
+      {!loading && !fetchError && 
       <Content 
       items = {items.filter((items)=>(items.item).toLowerCase().includes(searchitm.toLowerCase()))}
       handleCheck ={handleCheck}
       handleclick ={handleclick}
-      />
+      />}
       </main>
       <Footer
       length ={items.length}
