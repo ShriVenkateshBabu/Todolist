@@ -4,9 +4,10 @@ import Header from "./Components/Header"
 import React, { useEffect, useState } from 'react'
 import AddItem from './Components/AddItem';
 import Searchitem from './Components/Searchitem';
+import apirequest from './apirequest';
 
 const App = () => {
-   const APL_URL = "http://localhost:3400/items"
+   const API_URL = "http://localhost:3400/items"
   let [items, setitmes] = useState([]);
   let[newItem, setnewItem] =useState("")
   let [searchitm, setSearchitm] = useState('')
@@ -16,7 +17,7 @@ const App = () => {
   useEffect(()=>{
       const fetch_items = async() => {
        try{
-         const response = await fetch(APL_URL);
+         const response = await fetch(API_URL);
          if(!response.ok){
            throw Error("data is not received from api call")
          }
@@ -38,12 +39,22 @@ const App = () => {
       
   },[])
 
-   function additem(item){
-    let id = items.length ? items[items.length-1].id +1:1;
+    const  additem = async (item) =>{
+    let id = items.length ?  Number(items[items.length-1].id) + 1 : 1;
     let new_item = {id,item,checked:false};
     let updateitem = [...items,new_item]
     setitmes(updateitem);
     // localStorage.setItem("to-do-list", JSON.stringify(updateitem))
+    const postoptions = {
+     method :"POST",
+     headers :{
+      "Content-Type":"application/json"},
+     body: JSON.stringify(new_item)
+    }
+    const result = await apirequest(API_URL,postoptions)
+    if(result){
+      setFetchError(result)
+    }
    }
   function handlesubmit(e){
     e.preventDefault()
