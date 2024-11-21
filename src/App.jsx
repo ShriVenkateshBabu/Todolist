@@ -22,7 +22,6 @@ const App = () => {
            throw Error("data is not received from api call")
          }
          const listitm = await response.json();
-         console.log(listitm);
          setitmes(listitm)
          setFetchError(null)
        }
@@ -64,11 +63,12 @@ const App = () => {
     setnewItem("")
   }
   // console.log(items)
-  function handleCheck(id){
+  async function handleCheck(id){
     const newlist = items.map((itms)=>{
+     
       if(itms.id===id)
       {
-        return{...itms,checked:!itms.checked};  
+        return{...itms,checked:!itms.checked}; 
       }
       else
       {
@@ -77,11 +77,26 @@ const App = () => {
     }) 
     // localStorage.setItem("to-do-list",JSON.stringify(newlist)) 
     setitmes(newlist)
+    let myitm = newlist.filter((itm)=>itm.id===id)
+    // let checkval = JSON.stringify({checked:!myitm[0].checked})
+    // console.log(checkval);
+    const updateoptions = {
+      method :"PATCH",
+      headers :{
+       "Content-Type":"application/json"},
+      body: JSON.stringify({checked:myitm[0].checked})
+     }
+     const requrl =`${API_URL}/${id}`
+     const result = await apirequest(requrl,updateoptions)
+     if(result){
+       setFetchError(result)
+     } 
   }
   function handleclick(id){
     const new_list = items.filter((itm)=>itm.id!=id)
     // localStorage.setItem("to-do-list", JSON.stringify(new_list))
     setitmes(new_list);
+    
   }
 
   
