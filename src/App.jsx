@@ -92,8 +92,13 @@ const App = () => {
        setFetchError(result)
      } 
   }
-  function handleclick(id){
+  async function handleclick (id){
     const new_list = items.filter((itm)=>itm.id!=id)
+    const deleteOpitons ={
+      method:"DELETE"
+    }
+    const requrl =`${API_URL}/${id}`;
+    const result = await apirequest(requrl,deleteOpitons)
     // localStorage.setItem("to-do-list", JSON.stringify(new_list))
     setitmes(new_list);
     
