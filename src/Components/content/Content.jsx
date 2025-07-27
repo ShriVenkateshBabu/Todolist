@@ -1,5 +1,10 @@
+import { use } from 'react';
 import './Content.scss';
+import { useContext } from 'react';
+import DataContext from '../../ContextAPI/UseContext';
 const Content = () => {
+  const data = useContext(DataContext);
+  console.log("Data in Content:", data);
   return (
     <main>
       <div className='Content'>

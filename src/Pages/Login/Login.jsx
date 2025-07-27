@@ -11,7 +11,7 @@ const Login = () => {
         <input type="text" id="username" name='username' placeholder="Enter your username" />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name='password' placeholder="Enter your password" />
-        <button onClick={loginBtn} type='submit'>Login</button>
+        <button title='login' onClick={loginBtn} type='submit'>Login</button>
       </form> 
     </div>
   )

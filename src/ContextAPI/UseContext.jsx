@@ -1,8 +1,16 @@
-// import { useContext } from "react";
-// const userContext = useContext();
+import { createContext, useContext } from "react";
+import useAxios from "../axios/useAxios";
 
-// <useContext.provider value
+const DataContext = createContext();
 
-// >
-
-// </useContext.provider>
+export const DataProvider = ({children}) => {
+   const data = useAxios();
+   console.log(useAxios())
+   console.log("Data from useAxios:", data);
+   return (
+    <DataContext.Provider value ={data}>
+    {children}
+    </DataContext.Provider>
+   )
+}
+export default DataContext;
