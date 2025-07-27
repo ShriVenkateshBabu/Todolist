@@ -5,9 +5,21 @@ $primary-border-color: rgb(43, 25, 25);
   border-radius: 1%;
   box-shadow: rgb(211, 210, 210) 1px 1px 10px;
 }
+.login_container input,label,button{
+ padding: 2%;
+}
+.login_container button{
+  background-color: #456B75 ;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 2%;
+}
 .login_form{
   display: flex;
   flex-direction: column;
+  padding: 5%;
 }
 .login_container {
  
@@ -16,6 +28,7 @@ $primary-border-color: rgb(43, 25, 25);
   margin: 11% auto;
   height: 50vh;
 }
+
 @media (max-width: 768px) {
   .login_container {
     width: 90%;
