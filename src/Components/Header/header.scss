@@ -7,7 +7,8 @@
 header{
     @include Header_Footer;
     top: 0;
- button{
+ button
+   {
     @include button;
     @include border(white);
     font-size: 60%;
@@ -18,9 +19,8 @@ header{
     width: 5%;
     align-items: end;
     float: right;
-
+    }
  }
-}
 
 
 
