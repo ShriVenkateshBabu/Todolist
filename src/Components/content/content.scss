@@ -1,6 +1,4 @@
-$font-size : 40%; // Define your font size here.
-$One-Percent : 1%; // Define your one percent value here.
-$two-Percent : 1%; // Define your two percent value here.
+@use '../global.scss' as *;
 *{
     margin:0;
     padding: 0;
@@ -26,7 +24,7 @@ main{
     margin-left: $two-Percent;
     border: none;
     border-radius: 5%;
-    background-color: #456B75; // Use the same primary color
+    background-color: $primary; // Use the same primary color
     color: white;
     cursor: pointer;
 }
