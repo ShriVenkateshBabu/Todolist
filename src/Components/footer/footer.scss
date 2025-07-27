@@ -1,10 +1,4 @@
-$primary :#456B75 ; // Define your primary color here.(Header background color)
-$font-size: 1.3rem; // Define your font size here.
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@use '../global.scss' as *;
 footer{
     background-color: $primary;
     color: white;
@@ -13,5 +7,5 @@ footer{
     bottom: 0;
     width: 100%;
     padding: 1%;
-    font-size: $font-size;
+    font-size: 100%;
 }
