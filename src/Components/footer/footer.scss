@@ -1,6 +1,8 @@
+
 @use '../global.scss' as *; //using @use case the filename should not have _
 
 footer{
     @include Header_Footer;
     bottom: 0;
+
 }
