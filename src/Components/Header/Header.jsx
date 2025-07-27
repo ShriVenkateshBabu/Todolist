@@ -1,7 +1,9 @@
 import './header.scss'
 const Header = () => {
   return (
-    <header>ToDoList</header>
+    <header>ToDoList
+    <button className='btn'>Logout</button>
+    </header>
   )
 }
 

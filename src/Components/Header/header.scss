@@ -1,13 +1,27 @@
 @use '../global.scss' as *;
-header{
-    background-color: $primary;
-    color: white;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    padding: 1%;
-    top: 0;
-    font-size: 100%;
+
+@mixin border($color) {
+    border: 1px solid #{$color};
 }
+
+header{
+    @include Header_Footer;
+    top: 0;
+ button{
+    @include button;
+    @include border(white);
+    font-size: 60%;
+    font-weight: bolder;
+    color: white;
+    text-transform: lowercase;
+    padding: 0.5%;
+    width: 5%;
+    align-items: end;
+    float: right;
+
+ }
+}
+
+
 
 
