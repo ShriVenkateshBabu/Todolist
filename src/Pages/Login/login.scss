@@ -1,0 +1,32 @@
+$primary-border-color: rgb(43, 25, 25);
+
+@mixin border($color) {
+  
+  border-radius: 1%;
+  box-shadow: rgb(211, 210, 210) 1px 1px 10px;
+}
+.login_form{
+  display: flex;
+  flex-direction: column;
+}
+.login_container {
+ 
+  width: 55%;
+  @include border($primary-border-color);
+  margin: 11% auto;
+  height: 50vh;
+}
+@media (max-width: 768px) {
+  .login_container {
+    width: 90%;
+    margin: 20%;
+    height: auto;
+  }
+}
+@media (min-width: 420px) and (max-width: 767px) {
+  .login_container {
+    width:60%;
+    margin: 20%;
+    height: 50vh;
+  }
+}
