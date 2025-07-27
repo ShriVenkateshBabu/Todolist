@@ -1,8 +1,11 @@
 import './header.scss'
 const Header = () => {
+  function logout() {
+     window.location.href = '/login'; // Redirect to login page
+  }
   return (
     <header>ToDoList
-    <button className='btn'>Logout</button>
+    <button onClick={logout} >Logout</button>
     </header>
   )
 }
