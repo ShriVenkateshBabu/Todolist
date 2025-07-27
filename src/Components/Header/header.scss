@@ -1,0 +1,15 @@
+$primary :#456B75 ; // Define your primary color here.(Header background color)
+$font-size: 1.3rem; // Define your font size here.
+
+header{
+    background-color: $primary;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    padding: 1%;
+    font-size: $font-size;
+    top: 0;
+}
+
+
