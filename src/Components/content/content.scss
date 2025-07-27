@@ -6,7 +6,7 @@
 }
 main{
     padding: $two-Percent $One-Percent;
-    margin-top: 3%; // Adjust for fixed header height
+    margin-top: 4%; // Adjust for fixed header height
     margin-bottom: $two-Percent; // Adjust for fixed footer height
     font-size: 2rem;
 }
@@ -18,13 +18,10 @@ main{
     border-radius: 2px;
 }
 .Content button{
-    padding: $One-Percent;
+    @include button;
     width: 8%;
-    font-size: $font-size;
+    padding: $One-Percent;
     margin-left: $two-Percent;
     border: none;
     border-radius: 5%;
-    background-color: $primary; // Use the same primary color
-    color: white;
-    cursor: pointer;
 }

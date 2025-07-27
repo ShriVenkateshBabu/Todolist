@@ -1,11 +1,8 @@
-@use '../global.scss' as *;
+
+@use '../global.scss' as *; //using @use case the filename should not have _
+
 footer{
-    background-color: $primary;
-    color: white;
-    text-align: center;
-    position: fixed;
+    @include Header_Footer;
     bottom: 0;
-    width: 100%;
-    padding: 1%;
-    font-size: 100%;
+
 }

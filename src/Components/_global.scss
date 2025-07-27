@@ -1,0 +1,27 @@
+$primary :#456B75 ; // Define your primary color here.(Header background color)
+$font-size : 50%; // Define your font size here.
+$One-Percent : 1%; // Define your one percent value here.
+$two-Percent : 1%; // Define your two percent value here.
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin Header_Footer {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    color: white;
+    padding: 1%;
+    font-size: 100%;
+    background-color: $primary;
+    letter-spacing: 0.05rem; 
+}
+@mixin button{
+    letter-spacing: 0.05rem; // Add some letter spacing for better readability
+    font-size: $font-size;
+    border-radius: 5%;
+    background-color: $primary; // Use the same primary color
+    color: white;
+    cursor: pointer;
+}
