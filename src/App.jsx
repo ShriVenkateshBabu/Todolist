@@ -4,13 +4,15 @@ import SignUp from './Pages/signup/SignUp'
 import Footer from './Components/footer/Footer'
 import Content from './Components/content/Content'
 import Login from './Pages/Login/Login'
+import { useEffect } from 'react'
 
 const App = () => {
 
   const routes = useRoutes([
     {path: '/signup', element: <SignUp/>},
     {path: '/login', element: <Login/>},
-    {path: '/', element: <Content/>},
+    {path: '/', element: <Login/>},
+    {path: '/dashboard', element: <Content/>},
 
   ])
   return (

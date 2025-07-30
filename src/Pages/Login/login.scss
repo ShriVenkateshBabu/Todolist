@@ -28,7 +28,12 @@ $primary-border-color: rgb(43, 25, 25);
   margin: 11% auto;
   height: 50vh;
 }
-
+.Error{
+  color: red;
+  padding: 1%;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 @media (max-width: 768px) {
   .login_container {
     width: 90%;
