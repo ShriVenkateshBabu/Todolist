@@ -1,12 +1,14 @@
-import { createContext} from "react";
+import { createContext, useEffect} from "react";
 import useAxios from "../axios/useAxios";
 import PropTypes from "prop-types"
-const DataContext = createContext();
 
-export const DataProvider = ({children}) => {
+export const DataContext = createContext();
+
+ const DataProvider = ({children}) => {
+
    const data = useAxios();
-   console.log(useAxios())
-   console.log("Data from useAxios:", data);
+   console.log("Data in DataProvider", data);
+
    return (
     <DataContext.Provider value ={data}>
     {children}
@@ -16,4 +18,4 @@ export const DataProvider = ({children}) => {
 DataProvider.propTypes ={
     children : PropTypes.any.isRequired
 }
-export default DataContext;
+export default DataProvider;

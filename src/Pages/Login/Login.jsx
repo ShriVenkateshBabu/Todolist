@@ -1,17 +1,49 @@
 import './login.scss'
+import { useState,useContext} from 'react';
+import {DataContext} from '../../ContextAPI/UseContext.jsx'; // Importing the context to access data
+
 const Login = () => {
-  const loginBtn = (e) => {
-    window.location.href = '/'
-    e.preventDefault(); // Prevent the default form submission behavior
+
+  const {users} = useContext(DataContext);
+  console.log("Data from context in Login:", users);
+  const [UserInputData, setUserInputData] = useState(
+    {
+    username: '',
+    password: ''
+   }
+  )
+  const [isValidUser, setIsValidUser] = useState(false);
+  const loginCredentials = (e) =>{
+    const {name,value} = e;
+    setUserInputData({
+      ...UserInputData,
+      [name]:value
+    })
   }
+  
+  const loginBtn = (e) => {
+    const isValidUser = users.find((user)=>user.username === UserInputData.username && UserInputData.password === user.password);
+    console.log(UserInputData,"UserInputData",)
+    if(isValidUser){
+    window.location.href = '/dashboard';
+    setIsValidUser(false); 
+    }else{
+       setIsValidUser(true);
+    }
+    e.preventDefault();
+    }
   return (
     <div className='login_container'>
       <form className='login_form' type='submit'>
         <label htmlFor="username">Username</label>
-        <input type="text" id="username" name='username' placeholder="Enter your username" />
+        <input type="text" id="username" name='username' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your username" />
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" name='password' placeholder="Enter your password" />
+        <input type="password" id="password" name='password' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your password" />
         <button title='login' onClick={loginBtn} type='submit'>Login</button>
+        {
+          isValidUser ? <p className='Error'>Invalid username or password</p> : null
+        }
+
       </form> 
     </div>
   )
