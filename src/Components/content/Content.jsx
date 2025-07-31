@@ -1,17 +1,17 @@
-import './Content.scss';
-import { useContext } from 'react';
-import DataContext from '../../ContextAPI/UseContext';
+import "./Content.scss";
+import { useContext } from "react";
+
+import TodolistItems from "./TodoListItems/TodolistItems.jsx";
+
 const Content = () => {
-  const data = useContext(DataContext);
-  console.log("Data in Content", data);
+
   return (
     <main>
-      <div className='Content'>
-        <input id="InputTask" type="text" placeholder="Enter the task" />
-        <button>Add Task</button>
+      <div className="Content">
+         <TodolistItems/>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Content
+export default Content;

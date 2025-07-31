@@ -1,7 +1,7 @@
 import './login.scss'
 import { useState,useContext} from 'react';
 import {DataContext} from '../../ContextAPI/UseContext.jsx'; // Importing the context to access data
-
+import {TodoButton} from '../../StyleComponents/Button.jsx'; // Importing styled button component
 const Login = () => {
 
   const {users} = useContext(DataContext);
@@ -39,11 +39,10 @@ const Login = () => {
         <input type="text" id="username" name='username' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your username" />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name='password' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your password" />
-        <button title='login' onClick={loginBtn} type='submit'>Login</button>
+        <TodoButton title='login' role='button' onClick={loginBtn} tabIndex={0} type='submit'>Login</TodoButton>
         {
           isValidUser ? <p className='Error'>Invalid username or password</p> : null
         }
-
       </form> 
     </div>
   )

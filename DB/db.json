@@ -1,23 +1,27 @@
 {
-    "data": {
-           "items":[{
-            "id": 1,
-            "title": "Learn React",
-            "completed": false
-        },
-        {
-            "id": 2,
-            "title": "Build a Todo App",
-            "completed": true
-        }],
-        "users":[
-        {
-             "username":"admin",
-             "password":"admin"
-        }
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "title": "Learn React",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Build a Todo App",
+        "completed": true
+      },
+      {
+        "id": 3,
+        "title": "Build a Ecommerce App",
+        "completed": true
+      }
+    ],
+    "users": [
+      {
+        "username": "admin",
+        "password": "admin"
+      }
     ]
-    }
-    
-    
-    
+  }
 }

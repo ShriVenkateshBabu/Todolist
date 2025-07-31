@@ -1,0 +1,17 @@
+@use "../../../Pages/Login/login.scss" as border;
+.ListItems{
+   @include border.border(black);
+   padding: 2%;
+   margin-top: 2%;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+li{
+    padding-bottom: 1%;
+    font-size: 60%;
+}
+.ListItems ,button{
+    outline: none;
+}
