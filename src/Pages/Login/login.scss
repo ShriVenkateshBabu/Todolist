@@ -9,10 +9,7 @@ $primary-border-color: rgb(43, 25, 25);
  padding: 2%;
 }
 .login_container button{
-  background-color: #456B75 ;
-  color: white;
-  border: none;
-  cursor: pointer;
+  font-size: 80%;
   font-weight: bold;
   margin-top: 2%;
 }
@@ -31,6 +28,7 @@ $primary-border-color: rgb(43, 25, 25);
 .Error{
   color: red;
   padding: 1%;
+  padding-bottom: 1%;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

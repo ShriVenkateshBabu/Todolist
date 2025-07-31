@@ -1,27 +1,22 @@
-@use '../global.scss' as *;
+@use "../global.scss" as *;
 
 @mixin border($color) {
-    border: 1px solid #{$color};
+  border: 1px solid #{$color};
 }
 
-header{
-    @include Header_Footer;
-    top: 0;
- button{
+header {
+  @include Header_Footer;
+  top: 0;
+  button {
     @include button;
     @include border(white);
-    font-size: 60%;
+    font-size: $font-size;
     font-weight: bolder;
     color: white;
     text-transform: lowercase;
     padding: 0.5%;
+    margin-right: 2%;
     width: 5%;
-    align-items: end;
     float: right;
-
- }
- 
+  }
 }
-
-
-

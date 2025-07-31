@@ -1,27 +1,26 @@
-@use '../global.scss' as *;
+@use '../global.scss' as global;
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
 main{
-    padding: $two-Percent $One-Percent;
+    padding: global.$two-Percent global.$One-Percent;
     margin-top: 4%; // Adjust for fixed header height
-    margin-bottom: $two-Percent; // Adjust for fixed footer height
+    margin-bottom: global.$two-Percent; // Adjust for fixed footer height
     font-size: 2rem;
 }
-.Content input{
+.Content input[type=text]{
     width: 90%;
-    padding: $One-Percent;
-    font-size: $font-size;
+    padding:global.$One-Percent;
+    font-size: global.$font-size;
     border: 1px solid #000000;
     border-radius: 2px;
 }
 .Content button{
-    @include button;
     width: 8%;
-    padding: $One-Percent;
-    margin-left: $two-Percent;
+    padding:global.$One-Percent;
+    margin-left:global.$two-Percent;
     border: none;
     border-radius: 5%;
 }
