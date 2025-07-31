@@ -39,10 +39,12 @@ const Login = () => {
         <input type="text" id="username" name='username' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your username" />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name='password' onChange = {(e)=>loginCredentials(e.target)} placeholder="Enter your password" />
+
         <TodoButton title='login' role='button' onClick={loginBtn} tabIndex={0} type='submit'>Login</TodoButton>
         {
           isValidUser ? <p className='Error'>Invalid username or password</p> : null
         }
+
       </form> 
     </div>
   )
