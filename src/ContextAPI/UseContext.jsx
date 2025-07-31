@@ -1,4 +1,3 @@
-
 import { createContext, useEffect, useState } from "react";
 import useAxios from "../axios/useAxios";
 import PropTypes from "prop-types";
@@ -7,6 +6,7 @@ export const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
   const data = useAxios();
+  const [users, SetUsers] = useState([]);
   const [listItems, setListItems] = useState([]);
   const [TaskName, setTaskName] = useState("");
   const [isToggle, setIsToggle] = useState(false);
@@ -14,6 +14,7 @@ const DataProvider = ({ children }) => {
   useEffect(() => {
     if (data.items) {
       setListItems(data.items);
+      SetUsers(data.users);
     }
   }, [data]);
 
@@ -27,6 +28,8 @@ const DataProvider = ({ children }) => {
         setTaskName,
         isToggle,
         setIsToggle,
+        users,
+        SetUsers,
       }}
     >
       {children}
