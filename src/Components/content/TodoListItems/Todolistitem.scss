@@ -1,17 +1,40 @@
 @use "../../../Pages/Login/login.scss" as border;
-.ListItems{
-   @include border.border(black);
-   padding: 2%;
-   margin-top: 2%;
+.ListItems {
+  @include border.border(black);
+  padding: 2%;
+  margin-top: 3%;
+  
 }
-ul{
-    padding: 0;
-    list-style: none;
+.ListItems_Container{
+    @include border.border(black);
+    padding: 2%;
+    height: 65vh;
+    margin-top: 2%;
+    overflow-y: scroll;
+    padding-bottom: 5%;
+    scrollbar-width: none;
 }
-li{
-    padding-bottom: 1%;
-    font-size: 60%;
+ul {
+  padding: 0;
+  list-style: none;
 }
-.ListItems ,button{
-    outline: none;
+li {
+  font-size: 60%;
+  padding-bottom: 10%;
 }
+svg:focus {
+  outline: none;
+}
+svg:hover{
+    color:rebeccapurple
+}
+label {
+  font-size: 100%;
+}
+.IconContainer {
+  float: right;
+}
+.IconContainer ,svg {
+  margin-left: 1rem;
+}
+
