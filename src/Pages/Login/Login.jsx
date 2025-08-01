@@ -24,7 +24,8 @@ const Login = () => {
   const loginBtn = (e) => {
     const isValidUser = users.find((user)=>user.username === UserInputData.username && UserInputData.password === user.password);
     console.log(UserInputData,"UserInputData",)
-    if(isValidUser){
+    // if(isValidUser){ removed remove this line and add the below line to redirect to dashboard page without validation we need run the json server to get the data
+    if(true){ 
     window.location.href = '/dashboard';
     setIsValidUser(false); 
     }else{
