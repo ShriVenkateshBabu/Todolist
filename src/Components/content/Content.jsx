@@ -1,4 +1,4 @@
-import "./Content.scss";
+import "./content.scss";
 import { useContext } from "react";
 
 import TodolistItems from "./TodoListItems/TodolistItems.jsx";
