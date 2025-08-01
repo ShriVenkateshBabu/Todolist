@@ -2,7 +2,7 @@ import Items from "./Items";
 import "./Todolistitem.scss";
 const ListItem = ({ list }) => {
   return (
-    <div className="ListItems">
+    <div className="ListItems_Container">
       <ul>
         {list.length ? (
           list.map((item) => {
